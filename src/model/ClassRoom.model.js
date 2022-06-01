@@ -1,11 +1,21 @@
 
 const mongoose = require('mongoose')
 
-
 const ClassRoom = new mongoose.Schema(
   {
     roomNum: {
       type: number,
+      required: true,
+    },
+    department: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "department",
+      required: true,
+    },
+
+    student: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "student",
       required: true,
     },
   },
@@ -15,4 +25,4 @@ const ClassRoom = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("ClassRoom", ClassRoom)
+module.exports = mongoose.model("classRoom", ClassRoom)
