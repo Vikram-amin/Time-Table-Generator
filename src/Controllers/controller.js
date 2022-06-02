@@ -53,8 +53,8 @@ const addshedule = async (req, res, next) => {
 
 const getTimetable = async (req, res, next) => {
   try {
-    let text = await shedule.find();
-    res.status(200).send(text);
+    let data = await (await shedule.find());
+    res.status(200).send(data);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
