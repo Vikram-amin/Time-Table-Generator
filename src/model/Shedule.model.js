@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const SheduleSchema = new mongoose.Schema(
   {
-    startTime: { type: Number, required: true },
-    endTime: { type: Number, required: true },
+    startTime: { type: String, required: true },
+    endTime: { type: String, required: true },
 
     department: {
       type: mongoose.Schema.Types.ObjectId,

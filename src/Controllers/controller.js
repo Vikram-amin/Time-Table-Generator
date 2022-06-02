@@ -2,7 +2,7 @@ const ClassRoom = require("../model/ClassRoom.model")
 const professor = require("../model/professor.model")
 const department = require("../model/Department.model");
 const student = require("../model/student.model");
-const shedule = require("../model/student.model")
+const shedule = require("../model/Shedule.model")
 
 const addclassRoom = async (req, res, next) => {
   try {
@@ -53,7 +53,8 @@ const addshedule = async (req, res, next) => {
 
 const getTimetable = async (req, res, next) => {
   try {
-    let data = await (await shedule.find());
+    let data = await (await shedule.find())
+      
     res.status(200).send(data);
   } catch (error) {
     res.status(500).json({ message: error.message });

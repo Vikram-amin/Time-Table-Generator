@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const ClassRoom = new mongoose.Schema(
   {
     roomNum: {
-      type: number,
+      type: String,
       required: true,
     },
     department: {
